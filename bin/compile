@@ -42,8 +42,12 @@ function vendor() {
   fi
 
   # standard paths
-  export CPPPATH="$path/include:$CPPPATH"
-  export CPATH="$path/include:$CPATH"
+  export CPPPATH="$path/include/ImageMagick-7:$CPPPATH"
+  export CPATH="$path/include/ImageMagick-7:$CPATH"
+  export C_INCLUDE_PATH="$path/include/ImageMagick-7:$C_INCLUDE_PATH"
+  
+  #export CPPPATH="$path/include:$CPPPATH"
+  #export CPATH="$path/include:$CPATH"
   export LIBRARY_PATH="$path/lib:$LIBRARY_PATH"
 
   export LD_LIBRARY_PATH="$path/lib:$LD_LIBRARY_PATH"
