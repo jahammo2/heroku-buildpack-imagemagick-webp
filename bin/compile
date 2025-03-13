@@ -102,17 +102,17 @@ mkdir -p $VENDOR_DIR
 echo "Vendoring binaries" | arrow
 
 if [[ "$STACK" == "heroku-24" ]]; then
-  echo "Vendoring on heroku-24"
-  ls $CACHE_DIR
-  echo "------------------"
-  ls $VENDOR_DIR
-  echo "------------------"
-  ls "$BUILD_DIR/vendor/imagemagick"
-  echo "------------------"
-  echo "CACHE_FILE: $CACHE_FILE"
-  echo "------------------"
+  # echo "Vendoring on heroku-24"
+  # ls $CACHE_DIR
+  # echo "------------------"
+  # ls $VENDOR_DIR
+  # echo "------------------"
+  # # ls "$BUILD_DIR/vendor/imagemagick"
+  # echo "------------------"
+  # echo "CACHE_FILE: $CACHE_FILE"
+  # echo "------------------"
   vendor "${ROOT_DIR}/build/imagemagick-heroku-24.tar.gz" "$BUILD_DIR/vendor/imagemagick"
-  echo "------------------"
+  # echo "------------------"
   # vendor $CACHE_FILE "$BUILD_DIR/vendor/imagemagick"
 elif [[ "$STACK" == "heroku-22" ]]; then
   echo "Vendoring on heroku-22"
