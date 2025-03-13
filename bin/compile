@@ -95,15 +95,15 @@ if [ ! -f $CACHE_FILE ]; then
 else
   # cache exists, extract it
   echo "-----> Extracting ImageMagick $CACHE_FILE => $VENDOR_DIR"
-  # tar xzf $CACHE_FILE -C "$BUILD_DIR/vendor/imagemagick"
+  tar xzf $CACHE_FILE -C "$BUILD_DIR/vendor/imagemagick"
 fi
 
 echo "Vendoring binaries" | arrow
 
 if [[ "$STACK" == "heroku-24" ]]; then
   echo "Vendoring on heroku-24"
-  vendor "${ROOT_DIR}/build/imagemagick-heroku-24.tar.gz" "$BUILD_DIR/vendor/imagemagick"
-  # vendor $CACHE_FILE "$BUILD_DIR/vendor/imagemagick"
+  # vendor "${ROOT_DIR}/build/imagemagick-heroku-24.tar.gz" "$BUILD_DIR/vendor/imagemagick"
+  vendor $CACHE_FILE "$BUILD_DIR/vendor/imagemagick"
 elif [[ "$STACK" == "heroku-22" ]]; then
   echo "Vendoring on heroku-22"
   vendor "${ROOT_DIR}/build/imagemagick-heroku-22.tar.gz" "$BUILD_DIR/vendor/imagemagick"
