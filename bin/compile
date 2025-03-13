@@ -55,9 +55,9 @@ function vendor() {
 IMAGE_MAGICK_VERSION="7.1.1-45"
 CACHE_FILE="$CACHE_DIR/imagemagick-$IMAGE_MAGICK_VERSION.tar.gz"
 VENDOR_DIR="$BUILD_DIR/vendor"
+mkdir -p $VENDOR_DIR
 
 if [ ! -f $CACHE_FILE ]; then
-  mkdir -p $VENDOR_DIR
   INSTALL_DIR="$VENDOR_DIR/imagemagick"
   mkdir -p $INSTALL_DIR
   # install imagemagick
